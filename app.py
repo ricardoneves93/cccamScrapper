@@ -15,10 +15,16 @@ def getCurrentDateUrl():
     return BaseURL + str(year) + '/' +str(month) + '/' + str(day)
 
 def printClinesToFile(fileDir):
+    cLinesCounter = 0
     for key, value in clineByHost.iteritems():
-        with open(fileDir,'a') as f:
-            f.write(value[0])
-            f.write('\n')
+        if cLinesCounter < 8:
+            with open(fileDir,'a') as f:
+                f.write(value[0])
+                if cLinesCounter < 7:
+                    f.write('\n')
+        else: break
+        cLinesCounter = cLinesCounter + 1
+
 
 
 def getCLinesFromWebsite(fileDir):

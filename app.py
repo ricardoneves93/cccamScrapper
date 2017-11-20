@@ -2,7 +2,7 @@ from appJar import gui
 from bs4 import BeautifulSoup
 import requests
 import datetime
-app = gui()
+app = gui("Linhas CCcam", "700x200")
 BaseURL = 'http://www.freecline.com/history/CCcam/'
 clineByHost = {}
 NUMBER_OF_CLINES_TO_WRITE_TO_FILE = 10
@@ -68,8 +68,9 @@ def press(button):
 
 
 
-app.addLabel("title", "Content content content")
-app.setLabelBg("title", "orange")
+app.addLabel("toDo", "Selecione o ficheiro para onde quer escrever as linhas CCcam.")
+app.addLabel("recomendation", "E recomendado escolher um ficheiro que esteja directamente numa PEN USB para importar de seguida na sua Box ou Receptor satelite.")
+#app.setLabelBg("title", "orange")
 app.addButton("Escolher ficheiro", press)
 
 app.go()
